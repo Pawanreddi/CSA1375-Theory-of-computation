@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define TRUE 1
+#define FALSE 0
+int belongs_to_grammar(char *str) {
+    int len = strlen(str);
+    if (len < 3)
+    return FALSE;
+    if (str[0] != '0' || str[len-1] != '1')
+    return FALSE;
+    for (int i = 1; i < len-1; i++) {
+    if (str[i] != '0' && str[i] != '1')
+    return FALSE;
+    }
+    return TRUE;
+    }
+   int main() 
+   {
+    char input_string[100];
+    printf("Enter a string: ");
+    scanf("%s", input_string);
+    if (belongs_to_grammar(input_string))
+    printf("String belongs to the grammar.\n");
+    else
+        printf("String does not belong to the grammar.\n");
+        return 0;
+}
